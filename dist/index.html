@@ -108,6 +108,78 @@ html{scroll-behavior:smooth}
   @media (max-width:820px){.lp-float{display:block}}
   @media (max-width:820px){#oferta{scroll-margin-top:-150px}}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  /* ===== KV BLOCO ===== */
+  .kv-bloco,.kv-bloco *{box-sizing:border-box}
+  .kv-bloco{
+    --kv-verde-escuro:#26382D;--kv-creme:#FBF8F2;--kv-bege:#F6F2EB;
+    --kv-dourado:#C0894A;--kv-dourado-claro:#E0B579;
+    --kv-rosa-suave:#D9A08E;--kv-verde-claro:#A9B8AA;--kv-texto:#4A5A4C;
+    width:100%;background:var(--kv-verde-escuro);
+    font-family:'Nunito Sans','Nunito Sans Fallback',system-ui,-apple-system,sans-serif;color:var(--kv-creme);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:clamp(48px,8vw,96px) clamp(20px,5vw,40px) clamp(40px,6vw,64px);
+    overflow-x:hidden;
+  }
+  .kv-inner{width:100%;max-width:620px;display:flex;flex-direction:column}
+  .kv-titulo{
+    font-family:'Fraunces','Fraunces Fallback',Georgia,serif;font-weight:600;
+    font-size:clamp(29px,5.6vw,46px);line-height:1.16;letter-spacing:-.02em;
+    margin:0;text-wrap:balance;color:var(--kv-creme);
+  }
+  .kv-titulo .merecer{color:var(--kv-dourado-claro)}
+  .kv-titulo .culpa{color:var(--kv-rosa-suave)}
+  .kv-linha{width:100%;height:1px;background:rgba(251,248,242,.14);margin:clamp(28px,5vw,40px) 0 0}
+  .kv-card{
+    background:var(--kv-bege);border-radius:20px;
+    padding:clamp(24px,4.5vw,34px) clamp(22px,4.5vw,34px);
+    margin:clamp(28px,5vw,40px) 0 0;
+  }
+  .kv-card .traco{width:36px;height:2px;background:var(--kv-dourado)}
+  .kv-ponte{
+    font-family:'Fraunces','Fraunces Fallback',Georgia,serif;font-weight:600;
+    font-size:clamp(20px,3.8vw,28px);line-height:1.24;letter-spacing:-.01em;
+    color:var(--kv-verde-escuro);margin:clamp(16px,3vw,20px) 0 0;text-wrap:balance;
+  }
+  .kv-mecanismo{
+    font-size:clamp(16px,3vw,19px);line-height:1.62;color:var(--kv-texto);
+    margin:clamp(14px,2.5vw,18px) 0 0;text-wrap:pretty;
+  }
+  .kv-mecanismo strong{color:var(--kv-verde-escuro);font-weight:700}
+  .kv-cta{
+    width:100%;margin:clamp(30px,5vw,42px) 0 0;
+    background:var(--kv-dourado);color:#fff;text-decoration:none;border-radius:999px;
+    padding:clamp(19px,3.4vw,23px) 24px;min-height:58px;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-size:clamp(15px,3vw,18px);font-weight:800;letter-spacing:.03em;
+    transition:background .18s ease;
+    animation:kvPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes kvPulse{
+    0%,100%{transform:scale(1);box-shadow:0 20px 44px -18px rgba(192,137,74,.95)}
+    50%{transform:scale(1.018);box-shadow:0 26px 56px -18px rgba(192,137,74,1)}
+  }
+  .kv-cta:hover{background:#CE9755;color:#fff;animation-play-state:paused}
+  .kv-cta:focus-visible{outline:2px solid var(--kv-dourado-claro);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){.kv-cta{animation:none;box-shadow:0 20px 44px -18px rgba(192,137,74,.95)}}
+  .kv-selos{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+    gap:8px 18px;margin:18px 0 0;font-size:12.5px;color:var(--kv-verde-claro);
+  }
+  .kv-selos span.item{display:inline-flex;align-items:center;gap:7px}
+  .kv-selos .ponto{width:3px;height:3px;border-radius:50%;background:rgba(169,184,170,.5)}
+  .kv-reviews{display:flex;align-items:center;justify-content:center;gap:12px;margin:16px 0 0}
+  .kv-avatares{display:flex}
+  .kv-avatares img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid var(--kv-verde-escuro)}
+  .kv-avatares img+img{margin-left:-10px}
+  .kv-reviews-texto{font-size:12.5px;line-height:1.4;color:var(--kv-verde-claro)}
+  .kv-estrelas{color:var(--kv-dourado-claro);letter-spacing:2px;font-size:11px}
+  .kv-oferta{
+    display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;
+    gap:6px 12px;margin:clamp(22px,4vw,30px) 0 0;text-align:center;
+  }
+  .kv-entregavel{font-size:clamp(14.5px,2.6vw,16.5px);font-weight:700;color:var(--kv-creme)}
+  .kv-desconto{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--kv-verde-claro)}
+  .kv-desconto b{color:var(--kv-dourado-claro);font-weight:700}
 </style>
 <!-- TikTok Pixel Code Start -->
 <script>
@@ -128,53 +200,54 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <body>
 <!-- End UTMify Pixel Code -->
 <div class="lp" style="font-family:'Nunito Sans','Nunito Sans Fallback',sans-serif;color:#2B2E29;background:#F6F2EB;">
-<header style="background:#26382D;color:#F6F2EB;padding:clamp(48px,9vw,80px) 16px 0;text-align:left;">
-  <div style="max-width:460px;margin:0 auto;">
+<section class="kv-bloco">
+  <div class="kv-inner">
 
-    <h1 style="font-family:'Fraunces','Fraunces Fallback',serif;font-weight:700;font-size:clamp(25px,6.6vw,32px);line-height:1.15;letter-spacing:-.01em;margin:0;">Ansiedade, culpa e perda de controle com a comida?</h1>
+    <h1 class="kv-titulo">Ansiedade → Recompensa: <span class="merecer">"Eu mereço"</span> → <span class="culpa">Culpa</span>...</h1>
 
-    <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#C0894A;font-weight:700;margin:clamp(24px,5vw,32px) 0 10px;padding-bottom:10px;border-bottom:1px solid rgba(246,242,235,.16);">Você se reconhece?</p>
+    <div class="kv-linha"></div>
 
-    <div style="display:flex;flex-direction:column;">
-      <div style="padding:clamp(16px,3.5vw,20px) 0;border-bottom:1px solid rgba(246,242,235,.16);">
-        <p style="font-size:clamp(14px,3.6vw,16px);line-height:1.4;color:rgba(246,242,235,.72);margin:0;">Você sabe o que deveria fazer...</p>
-        <p style="font-family:'Fraunces','Fraunces Fallback',serif;font-weight:500;font-size:clamp(16px,4.2vw,18px);line-height:1.3;color:#F6F2EB;margin:6px 0 0;">mas a ansiedade faz você perder o controle?</p>
+    <div class="kv-card">
+      <div class="traco"></div>
+      <p class="kv-ponte">Se esse ciclo se repete, existe uma forma prática de interrompê-lo.</p>
+      <p class="kv-mecanismo">Método prático para <strong>reconhecer seus gatilhos emocionais</strong>, interromper o impulso da compulsão alimentar causada pela ansiedade e <strong>recuperar o controle da alimentação</strong>, favorecendo o emagrecimento.</p>
+    </div>
+
+    <a class="kv-cta" href="#oferta">QUERO GARANTIR MEUS 80% OFF</a>
+
+    <div class="kv-selos">
+      <span class="item">
+        <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true"><path d="M3 6V4a3 3 0 1 1 6 0v2" stroke="#C0894A" stroke-width="1.4" stroke-linecap="round"/><rect x="1" y="6" width="10" height="7" rx="2" fill="#C0894A"/></svg>
+        Compra 100% segura
+      </span>
+      <span class="ponto"></span>
+      <span class="item">
+        <svg width="11" height="14" viewBox="0 0 11 14" fill="none" aria-hidden="true"><path d="M6.4 1 1.5 8h3.2l-.9 5 5.2-7.3H5.7L6.4 1Z" fill="#C0894A"/></svg>
+        Acesso imediato
+      </span>
+    </div>
+
+    <div class="kv-reviews">
+      <div class="kv-avatares">
+        <img src="/assets/images/avatar-casal-01.webp" alt="" width="30" height="30" loading="lazy" decoding="async">
+        <img src="/assets/images/avatar-casal-02.webp" alt="" width="30" height="30" loading="lazy" decoding="async">
+        <img src="/assets/images/avatar-casal-03.webp" alt="" width="30" height="30" loading="lazy" decoding="async">
+        <img src="/assets/images/avatar-casal-04.webp" alt="" width="30" height="30" loading="lazy" decoding="async">
       </div>
-      <div style="padding:clamp(16px,3.5vw,20px) 0;border-bottom:1px solid rgba(246,242,235,.16);">
-        <p style="font-size:clamp(14px,3.6vw,16px);line-height:1.4;color:rgba(246,242,235,.72);margin:0;">Ansiedade → “eu mereço” → culpa...</p>
-        <p style="font-family:'Fraunces','Fraunces Fallback',serif;font-weight:500;font-size:clamp(16px,4.2vw,18px);line-height:1.3;color:#F6F2EB;margin:6px 0 0;">e tudo começa de novo?</p>
+      <div class="kv-reviews-texto">
+        <div class="kv-estrelas" aria-label="5 estrelas de 5">★★★★★</div>
+        <div>+12.455 pessoas já aplicaram</div>
       </div>
     </div>
 
-    <div style="background:#F6F2EB;color:#26382D;border-radius:18px;padding:clamp(18px,4vw,24px);margin-top:clamp(24px,5vw,32px);">
-      <div aria-hidden="true" style="width:36px;height:3px;background:#C0894A;border-radius:2px;margin-bottom:12px;"></div>
-      <h2 style="font-family:'Fraunces','Fraunces Fallback',serif;font-weight:600;font-size:clamp(17px,4.4vw,21px);line-height:1.25;letter-spacing:-.005em;color:#26382D;margin:0;">Se esse ciclo se repete, existe uma forma prática de interrompê-lo.</h2>
-      <p style="font-size:clamp(13px,3.3vw,14.5px);line-height:1.55;color:#3d5142;margin:clamp(8px,2vw,12px) 0 0;">Método prático para <strong style="color:#C0894A;font-weight:700;">reconhecer</strong> seus gatilhos emocionais, <strong style="color:#C0894A;font-weight:700;">interromper</strong> a compulsão alimentar e <strong style="color:#C0894A;font-weight:700;">recuperar</strong> o controle da alimentação — favorecendo o emagrecimento.</p>
+    <div class="kv-oferta">
+      <span class="kv-entregavel">Guia Anticompulsão Emocional + 4 Bônus</span>
+      <span class="kv-desconto">Hoje com <b>80% OFF</b></span>
     </div>
 
-    <a class="lp-cta" href="#oferta" style="display:flex;align-items:center;justify-content:center;background:#C0894A;color:#fff;font-weight:700;border-radius:999px;padding:0 20px;min-height:56px;font-size:clamp(14px,3.8vw,16px);letter-spacing:.01em;text-decoration:none;margin-top:clamp(22px,4.5vw,30px);box-shadow:0 12px 26px -10px rgba(165,115,47,.75);white-space:nowrap;">QUERO GARANTIR MEUS 80% OFF</a>
-
-    <p style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-size:12px;color:rgba(246,242,235,.7);margin:clamp(14px,2.8vw,18px) 0 0;">
-      <span style="display:inline-flex;align-items:center;gap:5px;">🔒 Compra 100% segura</span>
-      <span aria-hidden="true" style="opacity:.5;">•</span>
-      <span style="display:inline-flex;align-items:center;gap:5px;">⚡ Acesso imediato</span>
-    </p>
-
-    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:clamp(16px,3vw,20px);">
-      <div style="display:flex;">
-        <img src="/assets/images/avatar-casal-01.webp" alt="" width="28" height="28" loading="lazy" decoding="async" style="width:28px;height:28px;border-radius:50%;border:2px solid #26382D;object-fit:cover;">
-        <img src="/assets/images/avatar-casal-02.webp" alt="" width="28" height="28" loading="lazy" decoding="async" style="width:28px;height:28px;border-radius:50%;border:2px solid #26382D;object-fit:cover;margin-left:-10px;">
-        <img src="/assets/images/avatar-casal-03.webp" alt="" width="28" height="28" loading="lazy" decoding="async" style="width:28px;height:28px;border-radius:50%;border:2px solid #26382D;object-fit:cover;margin-left:-10px;">
-        <img src="/assets/images/avatar-casal-04.webp" alt="" width="28" height="28" loading="lazy" decoding="async" style="width:28px;height:28px;border-radius:50%;border:2px solid #26382D;object-fit:cover;margin-left:-10px;">
-      </div>
-      <div style="display:flex;flex-direction:column;line-height:1.2;">
-        <span aria-label="5 estrelas de 5" style="color:#E0B579;font-size:13px;letter-spacing:1px;">★★★★★</span>
-        <span style="font-size:11.5px;color:rgba(246,242,235,.7);margin-top:2px;">· +12.455 pessoas já aplicaram</span>
-      </div>
-    </div>
   </div>
 
-  <div style="margin-top:clamp(20px,3.5vw,44px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);">
+    <div style="width:100%;margin-top:clamp(28px,5vw,44px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);">
     <div class="lp-marq" aria-hidden="true">
     <img src="/assets/images/guia-tablet-1080x1080.webp" alt="Guia Anti Compulsão Emocional" width="264" height="264" fetchpriority="high" decoding="async" style="height:264px;width:264px;border-radius:14px;flex-shrink:0;box-shadow:0 8px 24px rgba(10,20,14,.28);">
     <img src="/assets/images/sos-tablet-1080x1080.webp" alt="Bônus: SOS Ansiedade" width="264" height="264" fetchpriority="high" decoding="async" style="height:264px;width:264px;border-radius:14px;flex-shrink:0;box-shadow:0 8px 24px rgba(10,20,14,.28);">
@@ -196,7 +269,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <img src="/assets/images/guia-celular-1080x1080.webp" alt="" aria-hidden="true" width="264" height="264" loading="lazy" decoding="async" style="height:264px;width:264px;border-radius:14px;flex-shrink:0;box-shadow:0 8px 24px rgba(10,20,14,.28);">
     </div>
   </div>
-</header>
+</section>
 </div>
 <x-dc>
 
