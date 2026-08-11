@@ -661,5 +661,38 @@ class Component extends DCLogic {
 
 <!-- DC Runtime: loads React from CDN, then boots the page -->
 <script src="dc-runtime.js" defer></script>
+
+<!-- Sticky CTA mobile -->
+<style>
+  .sticky-mob{display:none}
+  @media(max-width:767px){
+    .sticky-mob{
+      display:flex;
+      position:fixed;
+      bottom:0;left:0;right:0;
+      z-index:9999;
+      background:#FBF8F2;
+      box-shadow:0 -2px 16px rgba(43,46,41,.13);
+      padding:10px 16px;
+      padding-bottom:calc(10px + env(safe-area-inset-bottom));
+    }
+    .sticky-mob a{
+      display:flex;align-items:center;justify-content:center;
+      width:100%;
+      background:transparent;
+      border:2px solid #C0894A;
+      color:#C0894A;
+      font-family:'Nunito Sans','Nunito Sans Fallback',sans-serif;
+      font-weight:800;font-size:15px;letter-spacing:.04em;
+      border-radius:999px;
+      padding:13px 20px;
+      text-decoration:none;
+    }
+    body{padding-bottom:72px}
+  }
+</style>
+<div class="sticky-mob">
+  <a href="https://pay.wiapy.com/iNxP8tmkbzDs">QUERO ACESSAR AGORA</a>
+</div>
 </body>
 </html>
