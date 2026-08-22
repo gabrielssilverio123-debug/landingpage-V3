@@ -632,11 +632,27 @@ src="https://www.facebook.com/tr?id=2209159793303013&amp;ev=PageView&amp;noscrip
     var id = a.getAttribute('href').slice(1);
     if (!id) return;
     var target = document.getElementById(id);
-    if (target) {
-      e.preventDefault();
-      var y = target.getBoundingClientRect().top + window.scrollY - 20;
+    if (!target) return;
+    e.preventDefault();
+
+    // No mobile, ao clicar em um CTA que leva para a oferta, garante que o
+    // cartão do Plano Completo (com o botão de checkout) fique visível.
+    if (id === 'oferta' && window.innerWidth <= 820) {
+      var card = target.querySelector('.oferta-card') || target;
+      var rect = card.getBoundingClientRect();
+      var margin = 16;
+      var y;
+      if (rect.height + margin * 2 <= window.innerHeight) {
+        y = window.scrollY + rect.top - Math.max(20, (window.innerHeight - rect.height) / 2);
+      } else {
+        y = window.scrollY + rect.bottom - window.innerHeight + margin;
+      }
       window.scrollTo({ top: y, behavior: 'smooth' });
+      return;
     }
+
+    var y = target.getBoundingClientRect().top + window.scrollY - 20;
+    window.scrollTo({ top: y, behavior: 'smooth' });
   });
 
   // FAQ accordion
