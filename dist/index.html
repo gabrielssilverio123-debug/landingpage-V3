@@ -224,25 +224,223 @@
 <body>
 
 <!-- HERO -->
-<section class="hero section" id="topo">
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-badge">Checklist Entrevista Sem Erro</div>
-        <h1>Descubra em minutos onde você está <span class="accent">travando</span> na sua busca por emprego.</h1>
-        <p class="hero-sub">Um diagnóstico prático com 40+ itens para analisar sua jornada — do currículo e LinkedIn à entrevista e negociação — mostrando exatamente o que precisa ser corrigido.</p>
-        <div style="display:inline-flex;flex-direction:column;align-items:center;gap:12px">
-        <a href="#oferta" class="cta-gold">Quero fazer meu diagnóstico
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <div class="rating-badge">
-          <span class="stars">★★★★★</span> <b>4.8/5.0</b> · Acesso imediato
-        </div>
-        </div>
+<section class="ces-hero" id="topo">
+  <style>
+    .ces-hero, .ces-hero * { box-sizing: border-box; }
+
+    .ces-hero {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a1628;
+      color: #F5F5F0;
+      padding: 40px 20px 56px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      overflow: hidden;
+    }
+
+    .ces-hero__wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    /* ---- PILL DE AUTORIDADE ---- */
+    .ces-hero__pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(218, 175, 68, 0.08);
+      border: 1px solid rgba(218, 175, 68, 0.4);
+      color: #DAAF44;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      max-width: 100%;
+    }
+    .ces-hero__pill-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #DAAF44;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ---- HEADLINE ---- */
+    .ces-hero__headline {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin-bottom: 18px;
+      color: #F5F5F0;
+    }
+    .ces-hero__highlight { color: #DAAF44; }
+
+    /* ---- SUBHEADLINE ---- */
+    .ces-hero__sub {
+      font-size: 15px;
+      line-height: 1.55;
+      color: #A8B0BC;
+      margin-bottom: 24px;
+      max-width: 540px;
+    }
+
+    /* ---- BADGES ---- */
+    .ces-hero__badges {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 22px;
+      padding: 0;
+    }
+    .ces-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #F5F5F0;
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .ces-hero__badge-icon {
+      width: 13px;
+      height: 13px;
+      color: #DAAF44;
+      flex-shrink: 0;
+    }
+
+    /* ---- SOCIAL PROOF ---- */
+    .ces-hero__social {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      color: #A8B0BC;
+    }
+    .ces-hero__stars {
+      color: #DAAF44;
+      letter-spacing: 2px;
+      font-size: 15px;
+      line-height: 1;
+    }
+    .ces-hero__rating { font-weight: 500; color: #F5F5F0; }
+
+    /* ---- MOCKUP ---- */
+    .ces-hero__visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ces-hero__mockup {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(218, 175, 68, 0.12);
+    }
+
+    /* ---- TABLET ---- */
+    @media (min-width: 600px) {
+      .ces-hero { padding: 56px 32px 72px; }
+      .ces-hero__headline { font-size: 38px; }
+      .ces-hero__sub { font-size: 16px; }
+    }
+
+    /* ---- DESKTOP ---- */
+    @media (min-width: 960px) {
+      .ces-hero { padding: 80px 40px 96px; }
+      .ces-hero__wrap {
+        grid-template-columns: 1.05fr 1fr;
+        gap: 60px;
+      }
+      .ces-hero__headline {
+        font-size: 46px;
+        margin-bottom: 22px;
+      }
+      .ces-hero__sub {
+        font-size: 17px;
+        margin-bottom: 28px;
+      }
+      .ces-hero__badge { font-size: 13px; padding: 9px 14px; }
+      .ces-hero__mockup { max-width: 560px; }
+    }
+
+    @media (min-width: 1200px) {
+      .ces-hero__headline { font-size: 52px; }
+    }
+  </style>
+
+  <div class="ces-hero__wrap">
+    <div class="ces-hero__text">
+
+      <!-- Pill de autoridade -->
+      <span class="ces-hero__pill">
+        <span class="ces-hero__pill-dot"></span>
+        Por Fernanda A. · Recrutadora · 14 anos no mercado
+      </span>
+
+      <!-- Headline -->
+      <h1 class="ces-hero__headline">
+        Aplique o checklist da Recrutadora Fernanda A. e descubra em 10 minutos por que suas entrevistas <span class="ces-hero__highlight">não estão virando oferta</span> de trabalho.
+      </h1>
+
+      <!-- Subheadline (mata a objeção da ruminação mental) -->
+      <p class="ces-hero__sub">
+        Mesmo se você já revisou mentalmente cada resposta centenas de vezes e ainda não sabe o que corrigir.
+      </p>
+
+      <!-- Benefit badges -->
+      <ul class="ces-hero__badges">
+        <li class="ces-hero__badge">
+          <svg class="ces-hero__badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Aplicação em 10 minutos
+        </li>
+        <li class="ces-hero__badge">
+          <svg class="ces-hero__badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Do currículo à negociação salarial
+        </li>
+        <li class="ces-hero__badge">
+          <svg class="ces-hero__badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Acesso imediato
+        </li>
+      </ul>
+
+      <!-- Social proof -->
+      <div class="ces-hero__social" aria-label="Avaliação 4.8 de 5 estrelas">
+        <span class="ces-hero__stars" aria-hidden="true">★★★★★</span>
+        <span class="ces-hero__rating">4.8/5.0</span>
       </div>
-      <div class="hero-img">
-        <img src="/assets/images/checklist-hero-combo.webp" width="900" height="900" alt="Checklist Entrevista Sem Erro — combo completo" fetchpriority="high">
-      </div>
+    </div>
+
+    <!-- Mockup comparativo -->
+    <div class="ces-hero__visual">
+      <img
+        src="/assets/images/hero-comparativo-recrutadora.webp"
+        alt="Comparativo entre candidata sem o checklist (reprovada) e candidata com o checklist (contratada), avaliadas pela recrutadora Fernanda A."
+        class="ces-hero__mockup"
+        width="1080"
+        height="1080"
+        loading="eager"
+        fetchpriority="high"
+      >
     </div>
   </div>
 </section>
