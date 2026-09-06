@@ -52,11 +52,12 @@
   @media (min-width:900px){
     .page-wrap{max-width:100%;box-shadow:none}
     .container{max-width:1180px;margin:0 auto;padding-left:40px;padding-right:40px}
-    .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;text-align:left}
-    .hero-grid .hero-text{text-align:left}
+    .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;grid-template-areas:"text video" "checks video";gap:18px 56px;align-items:start;text-align:left}
+    .hero-grid .hero-text{grid-area:text;text-align:left}
     .hero-grid h1{font-size:52px !important}
     .hero-grid .hero-sub{font-size:18px !important;max-width:520px}
-    .hero-grid .hero-img{margin:0 !important;max-width:340px !important;justify-self:center}
+    .hero-grid .hero-img{grid-area:video;margin:0 !important;max-width:340px !important;justify-self:center}
+    .hero-grid .hero-checks{grid-area:checks;width:100%;max-width:520px;margin:4px 0 0 !important}
     .recipes-scroll::before,.recipes-scroll::after{width:80px}
     .h2-big{font-size:44px !important}
     .steps-grid{grid-template-columns:repeat(4,1fr) !important}
@@ -97,9 +98,8 @@
         aria-label="Demostración de las barritas saludables"
         style="display:block;width:100%;aspect-ratio:3/4;object-fit:cover"></video>
     </div>
-   </div>
 
-    <!-- Feature checklist -->
+     <!-- Feature checklist -->
     <div style="margin-top:22px;text-align:left;display:grid;grid-template-columns:1fr;gap:10px;max-width:320px;margin-left:auto;margin-right:auto" class="hero-checks">
       <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Resultado de ventas garantizado</strong></span></div>
       <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Con ingredientes accesibles</strong></span></div>
@@ -107,6 +107,7 @@
       <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Sin máquinas costosas</strong></span></div>
       <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Sin necesidad de una cocina profesional</strong></span></div>
     </div>
+   </div>
   </section>
 
   <!-- Social proof -->
