@@ -71,11 +71,8 @@
 <div class="page-wrap">
 
   <!-- Top badges bar -->
-  <div style="background:#f4efe4;padding:10px 16px;display:flex;justify-content:center;flex-wrap:wrap;gap:14px;font-size:11px;font-weight:600;color:#5a3d24;text-transform:uppercase;letter-spacing:.04em">
-    <span style="display:inline-flex;align-items:center;gap:5px"><span style="color:#4a8b3a">✓</span>Método</span>
-    <span style="display:inline-flex;align-items:center;gap:5px"><span style="color:#4a8b3a">✓</span>Recetas</span>
-    <span style="display:inline-flex;align-items:center;gap:5px"><span style="color:#4a8b3a">✓</span>Comunidad</span>
-    <span style="display:inline-flex;align-items:center;gap:5px"><span style="color:#4a8b3a">✓</span>El producto</span>
+  <div style="background:#2b1a0e;padding:10px 16px;display:flex;justify-content:center;align-items:center;text-align:center;font-size:12px;font-weight:800;color:#8fd47a;letter-spacing:.01em">
+    🔥 Genera ingresos desde casa con tu celular. 🔥
   </div>
 
   <!-- HERO -->
@@ -500,8 +497,6 @@ document.querySelectorAll('a[href="#oferta"]').forEach(function(a){
     } else {
       // Card taller than viewport: align so CTA (bottom) is visible with 24px margin
       target = cardBottom - vh + 24;
-      // But never scroll past the top of the card
-      if(target > cardTop - 8) target = cardTop - 8;
     }
     window.scrollTo({top: Math.max(0,target), behavior:'smooth'});
   });
