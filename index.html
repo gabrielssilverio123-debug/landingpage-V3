@@ -414,7 +414,7 @@
           </div>
         </div>
 
-        <a href="https://pay.hotmart.com/L107503736O" style="position:relative;overflow:hidden;display:block;margin-top:14px;background:#4a8b3a;color:#fff;font-weight:800;font-size:14px;letter-spacing:.02em;padding:15px 16px;border-radius:12px;text-decoration:none;box-shadow:0 8px 20px -6px rgba(74,139,58,.55),inset 0 -3px 0 rgba(0,0,0,.2);text-transform:uppercase">
+        <a href="https://pay.hotmart.com/L107503736O?checkoutMode=10" style="position:relative;overflow:hidden;display:block;margin-top:14px;background:#4a8b3a;color:#fff;font-weight:800;font-size:14px;letter-spacing:.02em;padding:15px 16px;border-radius:12px;text-decoration:none;box-shadow:0 8px 20px -6px rgba(74,139,58,.55),inset 0 -3px 0 rgba(0,0,0,.2);text-transform:uppercase">
           QUIERO EMPEZAR CON MIS BARRITAS
           <span style="position:absolute;top:0;left:0;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);animation:shine 3.2s ease-in-out infinite"></span>
         </a>
@@ -486,7 +486,7 @@ document.querySelectorAll('a[href="#oferta"]').forEach(function(a){
     var card = document.querySelector('#oferta .offer-card');
     if(!card){ document.getElementById('oferta').scrollIntoView({behavior:'smooth'}); return; }
     // Find the CTA button inside the offer card — we want IT visible at the bottom
-    var cta = card.querySelector('a[href="https://pay.hotmart.com/L107503736O"]') || card.querySelector('a');
+    var cta = card.querySelector('a[href="https://pay.hotmart.com/L107503736O?checkoutMode=10"]') || card.querySelector('a');
     var vh = window.innerHeight;
     var cardRect = card.getBoundingClientRect();
     var cardTop = cardRect.top + window.pageYOffset;
