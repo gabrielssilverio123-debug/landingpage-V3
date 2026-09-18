@@ -354,7 +354,7 @@
       </div>
 
       <!-- Title -->
-      <div style="text-align:center;margin-top:14px">
+      <div class="offer-title" style="text-align:center;margin-top:14px">
         <h3 style="font-size:20px;font-weight:800;color:#2b1a0e;line-height:1.15">BARRITAS QUE VENDEN™</h3>
         <p style="margin-top:4px;font-size:14px;font-weight:700;color:#3a2415;line-height:1.25">El Método Simple para Ganar Dinero Desde Casa Vendiendo Barritas</p>
         <div style="margin-top:6px;display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#6b4d34;font-weight:700">
@@ -477,15 +477,16 @@ document.querySelectorAll('a[href="#oferta"]').forEach(function(a){
     var card = document.querySelector('#oferta .offer-card');
     if(!card){ document.getElementById('oferta').scrollIntoView({behavior:'smooth'}); return; }
     var oferta = document.getElementById('oferta');
-    if(window.innerWidth < 900 && oferta){
-      var ofertaTop = oferta.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo(0, Math.max(0, ofertaTop - 8));
+    var offerTitle = card.querySelector('.offer-title');
+    if(window.innerWidth < 900 && offerTitle){
+      var titleTop = offerTitle.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo(0, Math.max(0, titleTop - 8));
       window.requestAnimationFrame(function(){
-        var alignedTop = oferta.getBoundingClientRect().top + window.pageYOffset;
+        var alignedTop = offerTitle.getBoundingClientRect().top + window.pageYOffset;
         if(Math.abs(alignedTop - 8) > 2) window.scrollTo(0, Math.max(0, alignedTop - 8));
       });
       window.setTimeout(function(){
-        var finalTop = oferta.getBoundingClientRect().top + window.pageYOffset;
+        var finalTop = offerTitle.getBoundingClientRect().top + window.pageYOffset;
         if(Math.abs(finalTop - 8) > 2) window.scrollTo(0, Math.max(0, finalTop - 8));
       }, 250);
       return;
