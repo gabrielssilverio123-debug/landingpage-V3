@@ -350,7 +350,7 @@
 
       <!-- Product image (big, separated) -->
       <div style="margin:0 auto;max-width:360px">
-        <img src="uploads/ChatGPT Image 26 de ago. de 2026, 08_45_44.png" alt="Método Barritas de Snickers Saludables" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:14px">
+        <img src="uploads/ChatGPT Image 26 de ago. de 2026, 08_45_44.png" alt="Método Barritas de Snickers Saludables" loading="eager" fetchpriority="high" decoding="async" width="900" height="900" style="width:100%;height:auto;display:block;border-radius:14px">
       </div>
 
       <!-- Title -->
@@ -478,16 +478,18 @@ document.querySelectorAll('a[href="#oferta"]').forEach(function(a){
     if(!card){ document.getElementById('oferta').scrollIntoView({behavior:'smooth'}); return; }
     var promo = card.querySelector('.offer-promo');
     if(window.innerWidth < 900 && promo){
-      var promoTop = promo.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo(0, Math.max(0, promoTop - 8));
-      window.requestAnimationFrame(function(){
-        var alignedTop = promo.getBoundingClientRect().top + window.pageYOffset;
-        if(Math.abs(alignedTop - 8) > 2) window.scrollTo(0, Math.max(0, alignedTop - 8));
-      });
-      window.setTimeout(function(){
-        var finalTop = promo.getBoundingClientRect().top + window.pageYOffset;
-        if(Math.abs(finalTop - 8) > 2) window.scrollTo(0, Math.max(0, finalTop - 8));
-      }, 250);
+      var alignPromo = function(){
+        var promoTop = promo.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo(0, Math.max(0, promoTop - 8));
+      };
+      var productImage = card.querySelector('img[fetchpriority="high"]');
+      alignPromo();
+      if(productImage && !productImage.complete){
+        productImage.addEventListener('load', alignPromo, {once:true});
+      }
+      window.requestAnimationFrame(alignPromo);
+      window.setTimeout(alignPromo, 150);
+      window.setTimeout(alignPromo, 400);
       return;
     }
     // Find the CTA button inside the offer card — we want IT visible at the bottom
