@@ -42,6 +42,10 @@
   .below-fold{content-visibility:auto;contain-intrinsic-size:700px}
   .desktop-hero-checks{display:none !important}
   .mobile-hero-checks{display:grid !important}
+  @media (max-width:899px){
+    .hero-hashtags{flex-wrap:nowrap !important;gap:5px !important}
+    .hero-hashtags span{font-size:10px !important;padding-left:8px !important;padding-right:8px !important;white-space:nowrap}
+  }
   .recipes-scroll::before,.recipes-scroll::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
   .recipes-scroll::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
   .recipes-scroll::after{right:0;background:linear-gradient(-90deg,#fff,transparent)}
@@ -82,10 +86,10 @@
     <div class="hero-text">
     <div style="display:inline-flex;align-items:center;gap:6px;background:#e8f2df;color:#3a6d2c;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:6px 12px;border-radius:99px;margin-bottom:14px"><span style="width:6px;height:6px;border-radius:50%;background:#4a8b3a;animation:pulseDot 1.8s ease-in-out infinite"></span>Ingreso extra desde casa</div>
     <h1 style="font-size:30px;font-weight:800;color:#2b1a0e;text-wrap:balance;line-height:1.1">+9.500 personas ya están ganando hasta <span style="color:#4a8b3a">US$2,000 al mes</span> desde casa con este método comprobado</h1>
-    <div style="display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;margin-top:14px">
+    <div class="hero-hashtags" style="display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;margin-top:14px">
       <span style="background:#fff5cc;color:#8a6c17;font-weight:700;font-size:12px;padding:6px 12px;border-radius:999px;letter-spacing:.01em">#GanaDesdeCasa</span>
       <span style="background:#f4efe4;color:#5a3d24;font-weight:700;font-size:12px;padding:6px 12px;border-radius:999px;letter-spacing:.01em">#SinExperiencia</span>
-      <span style="background:#e8f2df;color:#3a6d2c;font-weight:700;font-size:12px;padding:6px 12px;border-radius:999px;letter-spacing:.01em">#Gana3BonosAdicionales</span>
+      <span style="background:#e8f2df;color:#3a6d2c;font-weight:700;font-size:12px;padding:6px 12px;border-radius:999px;letter-spacing:.01em">#Gana3Bonos</span>
     </div>
     <p class="hero-sub" style="margin-top:16px;color:#6b4d34;font-size:15px;text-wrap:pretty">Aplícalo ahora mismo y empieza a generar ingresos reales preparando barritas saludables desde tu cocina. Sin experiencia, sin máquinas, con ingredientes accesibles.</p>
     <div style="margin-top:22px;text-align:left;display:grid;grid-template-columns:1fr;gap:10px;max-width:320px;margin-left:auto;margin-right:auto" class="hero-checks desktop-hero-checks">
