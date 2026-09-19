@@ -40,8 +40,8 @@
   .hero-grid{display:block}
   .recipes-scroll{display:block;overflow:hidden;position:relative}
   .below-fold{content-visibility:auto;contain-intrinsic-size:700px}
-  .desktop-hero-checks{display:none}
-  .mobile-hero-checks{display:grid}
+  .desktop-hero-checks{display:none !important}
+  .mobile-hero-checks{display:grid !important}
   .recipes-scroll::before,.recipes-scroll::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
   .recipes-scroll::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
   .recipes-scroll::after{right:0;background:linear-gradient(-90deg,#fff,transparent)}
@@ -54,7 +54,7 @@
     .hero-grid h1{font-size:52px !important}
     .hero-grid .hero-sub{font-size:18px !important;max-width:520px}
     .hero-grid .hero-img{margin:0 !important;max-width:340px !important;justify-self:center}
-    .desktop-hero-checks{display:grid;max-width:520px;margin:22px 0 0 !important}
+    .desktop-hero-checks{display:grid !important;max-width:520px;margin:22px 0 0 !important}
     .mobile-hero-checks{display:none !important}
     .recipes-scroll::before,.recipes-scroll::after{width:80px}
     .h2-big{font-size:44px !important}
