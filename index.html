@@ -40,6 +40,7 @@
   .hero-grid{display:block}
   .recipes-scroll{display:block;overflow:hidden;position:relative}
   .below-fold{content-visibility:auto;contain-intrinsic-size:700px}
+  .desktop-hero-checks{display:none}
   .recipes-scroll::before,.recipes-scroll::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
   .recipes-scroll::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
   .recipes-scroll::after{right:0;background:linear-gradient(-90deg,#fff,transparent)}
@@ -52,6 +53,7 @@
     .hero-grid h1{font-size:52px !important}
     .hero-grid .hero-sub{font-size:18px !important;max-width:520px}
     .hero-grid .hero-img{margin:0 !important;max-width:340px !important;justify-self:center}
+    .desktop-hero-checks{display:grid;max-width:520px;margin:22px 0 0 !important}
     .recipes-scroll::before,.recipes-scroll::after{width:80px}
     .h2-big{font-size:44px !important}
     .steps-grid{grid-template-columns:repeat(4,1fr) !important}
@@ -81,8 +83,16 @@
     <div style="display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;margin-top:14px">
       <span style="background:#fff5cc;color:#8a6c17;font-weight:700;font-size:12px;padding:6px 12px;border-radius:999px;letter-spacing:.01em">#GanaDesdeCasa</span>
       <span style="background:#f4efe4;color:#5a3d24;font-weight:700;font-size:12px;padding:6px 12px;border-radius:999px;letter-spacing:.01em">#SinExperiencia</span>
+      <span style="background:#e8f2df;color:#3a6d2c;font-weight:700;font-size:12px;padding:6px 12px;border-radius:999px;letter-spacing:.01em">#Gana3BonosAdicionales</span>
     </div>
     <p class="hero-sub" style="margin-top:16px;color:#6b4d34;font-size:15px;text-wrap:pretty">Aplícalo ahora mismo y empieza a generar ingresos reales preparando barritas saludables desde tu cocina. Sin experiencia, sin máquinas, con ingredientes accesibles.</p>
+    <div style="margin-top:22px;text-align:left;display:grid;grid-template-columns:1fr;gap:10px;max-width:320px;margin-left:auto;margin-right:auto" class="hero-checks desktop-hero-checks">
+      <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Ingresos reales desde el primer mes</strong></span></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Sin experiencia previa</strong></span></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Sin máquinas costosas</strong></span></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Con ingredientes accesibles</strong></span></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Vende por WhatsApp desde el celular</strong></span></div>
+    </div>
     </div>
 
     <!-- Hero video -->
@@ -97,7 +107,7 @@
    </div>
 
     <!-- Feature checklist -->
-    <div style="margin-top:22px;text-align:left;display:grid;grid-template-columns:1fr;gap:10px;max-width:320px;margin-left:auto;margin-right:auto" class="hero-checks">
+    <div style="margin-top:22px;text-align:left;display:grid;grid-template-columns:1fr;gap:10px;max-width:320px;margin-left:auto;margin-right:auto" class="hero-checks mobile-hero-checks">
       <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Ingresos reales desde el primer mes</strong></span></div>
       <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Sin experiencia previa</strong></span></div>
       <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a2415"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#e8f2df;color:#4a8b3a;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">✓</span><span><strong>Sin máquinas costosas</strong></span></div>
@@ -492,15 +502,18 @@ document.querySelectorAll('a[href="#oferta"]').forEach(function(a){
 });
 
 (function(){
-  var el = document.querySelector('.hero-checks');
-  if(!el) return;
-  if(!('IntersectionObserver' in window)){ el.classList.add('reveal'); return; }
+  var elements = document.querySelectorAll('.hero-checks');
+  if(!elements.length) return;
+  if(!('IntersectionObserver' in window)){
+    elements.forEach(function(el){ el.classList.add('reveal'); });
+    return;
+  }
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
-      if(en.isIntersecting){ el.classList.add('reveal'); io.disconnect(); }
+      if(en.isIntersecting){ en.target.classList.add('reveal'); io.unobserve(en.target); }
     });
   },{threshold:0.25});
-  io.observe(el);
+  elements.forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body>
