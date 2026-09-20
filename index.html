@@ -104,9 +104,9 @@
     <!-- Hero video -->
     <div class="hero-img" style="margin:18px auto 0;border-radius:22px;overflow:hidden;position:relative;box-shadow:0 12px 30px -12px rgba(58,36,21,.35);max-width:230px;background:#2b1a0e">
       <video
-        src="uploads/vídeo_entregavel_página.mp4"
+        data-src="uploads/vídeo_entregavel_página.mp4"
         poster="assets/images/barrinha-hero-poster.webp"
-        autoplay muted loop playsinline preload="metadata"
+        muted loop playsinline preload="none"
         aria-label="Demostración de las barritas saludables"
         style="display:block;width:100%;aspect-ratio:3/4;object-fit:cover"></video>
     </div>
@@ -366,7 +366,7 @@
 
       <!-- Product image (big, separated) -->
       <div style="margin:0 auto;max-width:360px">
-        <img src="uploads/ChatGPT Image 26 de ago. de 2026, 08_45_44.png" alt="Método Barritas de Snickers Saludables" loading="eager" fetchpriority="high" decoding="async" width="900" height="900" style="width:100%;height:auto;display:block;border-radius:14px">
+        <img src="uploads/ChatGPT Image 26 de ago. de 2026, 08_45_44.png" alt="Método Barritas de Snickers Saludables" loading="lazy" decoding="async" width="900" height="900" style="width:100%;height:auto;display:block;border-radius:14px">
       </div>
 
       <!-- Title -->
@@ -467,6 +467,28 @@
 
 <script>
 (function(){
+  var heroVideo=document.querySelector('video[data-src]');
+  if(heroVideo){
+    var loadHeroVideo=function(){
+      if(heroVideo.src) return;
+      heroVideo.src=heroVideo.getAttribute('data-src');
+      heroVideo.load();
+      var playPromise=heroVideo.play();
+      if(playPromise&&typeof playPromise.catch==='function') playPromise.catch(function(){});
+    };
+    var scheduleVideo=function(){
+      if('requestIdleCallback' in window){
+        window.requestIdleCallback(loadHeroVideo,{timeout:2500});
+      }else{
+        window.setTimeout(loadHeroVideo,1200);
+      }
+    };
+    if(document.readyState==='complete') scheduleVideo();
+    else window.addEventListener('load',scheduleVideo,{once:true});
+  }
+})();
+
+(function(){
   var m=document.querySelector('[data-tm="m"]'),s=document.querySelector('[data-tm="s"]');
   if(!m||!s)return;
   var START=10*60;
@@ -496,7 +518,7 @@ document.querySelectorAll('a[href="#oferta"]').forEach(function(a){
         var promoTop = promo.getBoundingClientRect().top + window.pageYOffset;
         window.scrollTo(0, Math.max(0, promoTop - 8));
       };
-      var productImage = card.querySelector('img[fetchpriority="high"]');
+      var productImage = card.querySelector('img[alt="Método Barritas de Snickers Saludables"]');
       alignPromo();
       if(productImage && !productImage.complete){
         productImage.addEventListener('load', alignPromo, {once:true});
