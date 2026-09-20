@@ -11,7 +11,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Bricolage+Grotesque:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Bricolage+Grotesque:wght@600;700;800&display=optional" rel="stylesheet">
 <style>
   html{scroll-behavior:smooth}
   *,*::before,*::after{box-sizing:border-box}
@@ -39,7 +39,7 @@
   .page-wrap{max-width:440px;margin:0 auto;background:#fff;overflow:hidden}
   .hero-grid{display:block}
   .recipes-scroll{display:block;overflow:hidden;position:relative}
-  .below-fold{content-visibility:auto;contain-intrinsic-size:700px}
+  .below-fold{contain:layout paint}
   .desktop-hero-checks{display:none !important}
   .mobile-hero-checks{display:grid !important}
   @media (max-width:899px){
@@ -102,7 +102,7 @@
     </div>
 
     <!-- Hero video -->
-    <div class="hero-img" style="margin:18px auto 0;border-radius:22px;overflow:hidden;position:relative;box-shadow:0 12px 30px -12px rgba(58,36,21,.35);max-width:230px;background:#2b1a0e">
+    <div class="hero-img" style="margin:18px auto 0;border-radius:22px;overflow:hidden;position:relative;aspect-ratio:3/4;box-shadow:0 12px 30px -12px rgba(58,36,21,.35);max-width:230px;background:#2b1a0e">
       <video
         data-src="uploads/vídeo_entregavel_página.mp4"
         poster="assets/images/barrinha-hero-poster.webp"
