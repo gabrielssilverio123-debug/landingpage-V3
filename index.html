@@ -513,24 +513,34 @@ document.querySelectorAll('a[href="#oferta"]').forEach(function(a){
     e.preventDefault();
     var card = document.querySelector('#oferta .offer-card');
     if(!card){ document.getElementById('oferta').scrollIntoView({behavior:'smooth'}); return; }
+    var promo = card.querySelector('.offer-promo');
     var checkoutButton = card.querySelector('a[href^="https://pay.hotmart.com/"]');
-    if(window.innerWidth < 900 && checkoutButton){
-      var alignCheckoutButton = function(){
+    if(window.innerWidth < 900 && promo && checkoutButton){
+      var alignOffer = function(){
+        var promoRect = promo.getBoundingClientRect();
         var buttonRect = checkoutButton.getBoundingClientRect();
         var visualViewport = window.visualViewport;
-        var visibleBottom = visualViewport ? visualViewport.offsetTop + visualViewport.height : window.innerHeight;
-        var delta = buttonRect.bottom - visibleBottom + 20;
+        var visibleTop = visualViewport ? visualViewport.offsetTop : 0;
+        var visibleBottom = visibleTop + (visualViewport ? visualViewport.height : window.innerHeight);
+        var promoDelta = promoRect.top - visibleTop - 8;
+        var buttonDelta = buttonRect.bottom - visibleBottom + 20;
+        var delta = Math.max(promoDelta,buttonDelta);
         if(Math.abs(delta) < 2) return;
         var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         var targetScroll = Math.max(0,Math.min(window.pageYOffset + delta,maxScroll));
-        window.scrollTo({top:targetScroll,behavior:'instant'});
+        var previousScrollBehavior = document.documentElement.style.scrollBehavior;
+        document.documentElement.style.scrollBehavior='auto';
+        window.scrollTo(0,targetScroll);
+        window.requestAnimationFrame(function(){
+          document.documentElement.style.scrollBehavior=previousScrollBehavior;
+        });
       };
       var alignmentFrame = 0;
       var scheduleAlignment = function(){
         if(alignmentFrame) window.cancelAnimationFrame(alignmentFrame);
         alignmentFrame = window.requestAnimationFrame(function(){
           alignmentFrame = 0;
-          alignCheckoutButton();
+          alignOffer();
         });
       };
       var visualViewport = window.visualViewport;
@@ -538,17 +548,15 @@ document.querySelectorAll('a[href="#oferta"]').forEach(function(a){
         window.removeEventListener('resize',scheduleAlignment);
         if(visualViewport){
           visualViewport.removeEventListener('resize',scheduleAlignment);
-          visualViewport.removeEventListener('scroll',scheduleAlignment);
         }
       };
       window.addEventListener('resize',scheduleAlignment);
       if(visualViewport){
         visualViewport.addEventListener('resize',scheduleAlignment);
-        visualViewport.addEventListener('scroll',scheduleAlignment);
       }
       window.setTimeout(stopViewportTracking,1600);
       var productImage = card.querySelector('img[alt="Método Barritas de Snickers Saludables"]');
-      alignCheckoutButton();
+      alignOffer();
       if(productImage && !productImage.complete){
         productImage.addEventListener('load', scheduleAlignment, {once:true});
       }
