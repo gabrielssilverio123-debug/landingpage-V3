@@ -517,23 +517,47 @@ document.querySelectorAll('a[href="#oferta"]').forEach(function(a){
     if(window.innerWidth < 900 && checkoutButton){
       var alignCheckoutButton = function(){
         var buttonRect = checkoutButton.getBoundingClientRect();
-        var viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-        var viewportOffset = window.visualViewport ? window.visualViewport.offsetTop : 0;
-        var buttonTop = buttonRect.top + window.pageYOffset;
-        var buttonBottom = buttonRect.bottom + window.pageYOffset;
-        var targetScroll = Math.min(buttonTop - 12, buttonBottom - viewportOffset - viewportHeight + 24);
-        window.scrollTo({top:Math.max(0,targetScroll),behavior:'instant'});
+        var visualViewport = window.visualViewport;
+        var visibleBottom = visualViewport ? visualViewport.offsetTop + visualViewport.height : window.innerHeight;
+        var delta = buttonRect.bottom - visibleBottom + 20;
+        if(Math.abs(delta) < 2) return;
+        var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        var targetScroll = Math.max(0,Math.min(window.pageYOffset + delta,maxScroll));
+        window.scrollTo({top:targetScroll,behavior:'instant'});
       };
+      var alignmentFrame = 0;
+      var scheduleAlignment = function(){
+        if(alignmentFrame) window.cancelAnimationFrame(alignmentFrame);
+        alignmentFrame = window.requestAnimationFrame(function(){
+          alignmentFrame = 0;
+          alignCheckoutButton();
+        });
+      };
+      var visualViewport = window.visualViewport;
+      var stopViewportTracking = function(){
+        window.removeEventListener('resize',scheduleAlignment);
+        if(visualViewport){
+          visualViewport.removeEventListener('resize',scheduleAlignment);
+          visualViewport.removeEventListener('scroll',scheduleAlignment);
+        }
+      };
+      window.addEventListener('resize',scheduleAlignment);
+      if(visualViewport){
+        visualViewport.addEventListener('resize',scheduleAlignment);
+        visualViewport.addEventListener('scroll',scheduleAlignment);
+      }
+      window.setTimeout(stopViewportTracking,1600);
       var productImage = card.querySelector('img[alt="Método Barritas de Snickers Saludables"]');
       alignCheckoutButton();
       if(productImage && !productImage.complete){
-        productImage.addEventListener('load', alignCheckoutButton, {once:true});
+        productImage.addEventListener('load', scheduleAlignment, {once:true});
       }
-      window.requestAnimationFrame(alignCheckoutButton);
-      window.setTimeout(alignCheckoutButton, 150);
-      window.setTimeout(alignCheckoutButton, 400);
+      scheduleAlignment();
+      window.setTimeout(scheduleAlignment, 150);
+      window.setTimeout(scheduleAlignment, 400);
+      window.setTimeout(scheduleAlignment, 800);
       if(document.fonts && document.fonts.ready){
-        document.fonts.ready.then(alignCheckoutButton);
+        document.fonts.ready.then(scheduleAlignment);
       }
       return;
     }
