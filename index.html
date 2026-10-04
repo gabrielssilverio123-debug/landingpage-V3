@@ -383,10 +383,9 @@
         <!-- Includes (inside dark card) -->
         <div style="margin:14px auto 0;background:rgba(255,255,255,.06);border:1px solid rgba(255,210,63,.25);border-radius:12px;padding:14px;text-align:left">
           <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#ffd23f;text-align:center;margin-bottom:12px">Lo que vas a recibir</div>
-          <img src="uploads/ChatGPT Image 26 de ago. de 2026, 08_45_44.png" alt="Mockup del Método Barritas de Snickers Saludables" loading="lazy" decoding="async" width="900" height="900" style="display:block;width:100%;max-width:340px;height:auto;margin:0 auto 14px;border-radius:12px">
-          <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#4a8b3a;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;margin-top:1px">✓</span><p style="font-size:14px;color:#f4efe4;line-height:1.35"><strong style="color:#fff">Método Barritas de Snickers Saludables</strong></p></div>
+          <img src="uploads/product-mockup-offer.jpg" alt="Contenido incluido en el Método Barritas Saludables" loading="lazy" decoding="async" width="1448" height="1086" style="display:block;width:100%;height:auto;margin:0 auto 14px;border-radius:12px">
           <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#4a8b3a;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;margin-top:1px">✓</span><p style="font-size:14px;color:#f4efe4;line-height:1.35">Es una estructura completa para empezar, vender y apuntar a hasta <strong style="color:#ffd23f">US$2,000 al mes en ventas.</strong></p></div>
-          <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#ffd23f;color:#2b1a0e;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;margin-top:1px">★</span><p style="font-size:14px;color:#f4efe4;line-height:1.35"><strong style="color:#ffd23f">3 BONOS:</strong> Kit de Negocio y Ventas + Línea Fitness + Mega-Pack Repostería.</p></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#ffd23f;color:#2b1a0e;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;margin-top:1px">★</span><p style="font-size:14px;color:#f4efe4;line-height:1.35"><strong style="color:#ffd23f">3 BONOS</strong></p></div>
         </div>
 
         <!-- Price block -->
@@ -520,7 +519,7 @@ document.querySelectorAll('a[href="#oferta"]').forEach(function(a){
         visualViewport.addEventListener('resize',scheduleAlignment);
       }
       window.setTimeout(stopViewportTracking,1600);
-      var productImage = card.querySelector('img[alt="Mockup del Método Barritas de Snickers Saludables"]');
+      var productImage = card.querySelector('img[alt="Contenido incluido en el Método Barritas Saludables"]');
       alignOffer();
       if(productImage && !productImage.complete){
         productImage.addEventListener('load', scheduleAlignment, {once:true});
