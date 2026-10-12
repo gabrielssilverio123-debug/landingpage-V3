@@ -51,7 +51,7 @@
   .wrap {
     max-width: 460px;
     margin: 0 auto;
-    padding-block: 20px 48px;
+    padding-block: 16px 48px;
     padding-inline: 20px;
   }
 
@@ -59,7 +59,7 @@
     display: block;
     width: clamp(108px, 32vw, 132px);
     height: auto;
-    margin: 0 auto 14px;
+    margin: 0 auto 8px;
   }
 
   /* Eyebrow / method line */
@@ -86,7 +86,7 @@
     font-size: 28px;
     line-height: 1.08;
     letter-spacing: -0.02em;
-    margin: 0 0 16px;
+    margin: 0 0 24px;
     text-wrap: balance;
     text-align: center;
   }
@@ -110,7 +110,7 @@
     line-height: 1.5;
     color: var(--fg-muted);
     text-align: center;
-    margin: 0 0 22px;
+    margin: 0 0 30px;
     text-wrap: pretty;
   }
   .sub strong {
@@ -149,7 +149,7 @@
     position: relative;
     width: 100%;
     max-width: 360px;
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
     border-radius: 16px;
     overflow: hidden;
     box-shadow:
@@ -288,7 +288,7 @@
     box-shadow: 0 8px 22px rgba(22, 163, 74, 0.35);
     margin: 0 auto;
     transition: filter 0.15s ease;
-    animation: cta-pulse 1.6s ease-in-out infinite;
+    animation: cta-pulse 1.25s ease-in-out infinite;
   }
   .cta:hover,
   .cta:focus-visible { filter: brightness(1.06); outline: none; }
@@ -296,10 +296,16 @@
 
   @keyframes cta-pulse {
     0%, 100% {
-      box-shadow: 0 8px 22px rgba(22, 163, 74, 0.35);
+      box-shadow:
+        0 8px 22px rgba(22, 163, 74, 0.4),
+        0 0 0 0 rgba(22, 163, 74, 0.3);
+      filter: brightness(1);
     }
     50% {
-      box-shadow: 0 12px 30px rgba(22, 163, 74, 0.5);
+      box-shadow:
+        0 12px 32px rgba(22, 163, 74, 0.65),
+        0 0 0 7px rgba(22, 163, 74, 0.16);
+      filter: brightness(1.08);
     }
   }
   @media (prefers-reduced-motion: reduce) {
