@@ -55,6 +55,13 @@
     padding-inline: 20px;
   }
 
+  .mascot {
+    display: block;
+    width: clamp(108px, 32vw, 132px);
+    height: auto;
+    margin: 0 auto 14px;
+  }
+
   /* Eyebrow / method line */
   .eyebrow {
     font-family: var(--font-display);
@@ -141,7 +148,7 @@
   .vsl-wrap {
     position: relative;
     width: 100%;
-    max-width: 290px;
+    max-width: 360px;
     margin: 0 auto 20px;
     border-radius: 16px;
     overflow: hidden;
@@ -158,7 +165,6 @@
     display: block;
     width: 100%;
     aspect-ratio: 9 / 16;
-    max-height: 62vh;
     object-fit: cover;
     pointer-events: none; /* prevents native controls / right-click on video itself */
   }
@@ -264,6 +270,8 @@
   .cta {
     display: block;
     width: 100%;
+    max-width: 360px;
+    box-sizing: border-box;
     background: linear-gradient(180deg, var(--accent-bright) 0%, var(--accent) 100%);
     color: #ffffff;
     font-family: var(--font-display);
@@ -278,7 +286,7 @@
     text-decoration: none;
     text-align: center;
     box-shadow: 0 8px 22px rgba(22, 163, 74, 0.35);
-    margin: 0 0 0;
+    margin: 0 auto;
     transition: filter 0.15s ease;
     animation: cta-pulse 1.6s ease-in-out infinite;
   }
@@ -288,11 +296,9 @@
 
   @keyframes cta-pulse {
     0%, 100% {
-      transform: scale(1);
       box-shadow: 0 8px 22px rgba(22, 163, 74, 0.35);
     }
     50% {
-      transform: scale(1.025);
       box-shadow: 0 12px 30px rgba(22, 163, 74, 0.5);
     }
   }
@@ -435,13 +441,24 @@
     h1 { font-size: 34px; }
     .sub { font-size: 18.5px; }
     .tagline { font-size: 22px; }
-    .vsl-wrap { max-width: 320px; }
+    .vsl-wrap,
+    .cta { max-width: 400px; }
   }
 </style>
 </head>
 <body>
 
 <main class="wrap">
+
+  <img
+    class="mascot"
+    src="/assets/maquina-mascot.webp"
+    alt="Mascota de Máquina de Ingresos"
+    width="320"
+    height="320"
+    fetchpriority="high"
+    decoding="async"
+  >
 
   <h1>
     Activa tu <br>Máquina de Ingresos 24/7 y apunta a generar entre
