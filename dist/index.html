@@ -51,7 +51,7 @@
   .wrap {
     max-width: 460px;
     margin: 0 auto;
-    padding-block: 0 48px;
+    padding-block: 14px 48px;
     padding-inline: 20px;
   }
 
@@ -380,7 +380,7 @@
     display: block;
     width: clamp(64px, 20vw, 80px);
     height: auto;
-    margin: 12px auto 0;
+    margin: 0 auto 10px;
   }
 
   /* Seals */
@@ -448,7 +448,7 @@
 
   /* Slightly wider on tablets */
   @media (min-width: 640px) {
-    .wrap { max-width: 500px; padding-top: 0; }
+    .wrap { max-width: 500px; padding-top: 18px; }
     h1 { font-size: 34px; }
     .sub { font-size: 18.5px; }
     .tagline { font-size: 22px; }
@@ -631,7 +631,6 @@
   </p>
 
   <p class="tagline">
-    La máquina ya está creada.<br>Tú solo la activas.
     <img
       class="mascot"
       src="/assets/maquina-mascot.webp"
@@ -641,6 +640,7 @@
       loading="lazy"
       decoding="async"
     >
+    La máquina ya está creada.<br>Tú solo la activas.
   </p>
 
   <div class="seals">
