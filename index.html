@@ -361,20 +361,103 @@
     flex-shrink: 0;
   }
 
-  /* Method note */
-  .method-note {
-    font-size: 13.5px;
-    color: var(--fg-muted);
-    margin: 0 0 28px;
-    padding: 14px 16px;
-    border-left: 3px solid var(--accent);
-    background: rgba(22, 163, 74, 0.06);
-    border-radius: 0 10px 10px 0;
-    line-height: 1.5;
+  .faq {
+    margin: 38px 0 42px;
+    color: #111111;
   }
-  .method-note strong {
-    color: var(--accent-deep);
+  .faq-heading {
+    margin: 0 0 6px;
+    color: #111111;
+    font-family: var(--font-display);
+    font-size: 21px;
     font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .faq-subheading {
+    margin: 0 0 20px;
+    color: #111111;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .faq-list {
+    display: grid;
+    gap: 10px;
+  }
+  .faq-item {
+    overflow: hidden;
+    border: 1px solid rgba(17, 17, 17, 0.12);
+    border-radius: 12px;
+    background: #ffffff;
+  }
+  .faq-item summary {
+    position: relative;
+    display: flex;
+    min-height: 52px;
+    align-items: center;
+    padding: 14px 46px 14px 16px;
+    color: #111111;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item summary::after {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid #111111;
+    border-bottom: 2px solid #111111;
+    content: "";
+    transform: translateY(-70%) rotate(45deg);
+    transition: transform 0.18s ease;
+  }
+  .faq-item[open] summary {
+    border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+  }
+  .faq-item[open] summary::after {
+    transform: translateY(-25%) rotate(225deg);
+  }
+  .faq-item summary:focus-visible {
+    outline: 3px solid rgba(22, 163, 74, 0.45);
+    outline-offset: -3px;
+  }
+  .faq-answer {
+    padding: 14px 16px 16px;
+    color: #111111;
+    font-size: 14px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+  .faq-answer p {
+    margin: 0 0 12px;
+  }
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+  .faq-answer strong {
+    color: #111111;
+    font-weight: 700;
+  }
+  .faq-answer .faq-highlight {
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.45;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-item summary::after { transition: none; }
   }
 
   /* Tagline */
@@ -439,6 +522,10 @@
     h1 { font-size: 31px; }
     .sub { font-size: 17px; }
     .tagline { font-size: 19px; }
+    .faq { margin-top: 46px; }
+    .faq-heading { font-size: 24px; }
+    .faq-item summary { font-size: 15px; }
+    .faq-answer { font-size: 14.5px; }
     .vsl-wrap { max-width: 400px; }
     .cta { max-width: 420px; }
   }
@@ -605,9 +692,83 @@
     <li><span class="check" aria-hidden="true">✓</span><span>Materiales y scripts incluidos</span></li>
   </ul>
 
-  <p class="method-note">
-    <span class="cav">Método C.A.V.</span> · Copia · Activa · Vende
-  </p>
+  <section class="faq" aria-labelledby="faqHeading">
+    <h2 class="faq-heading" id="faqHeading">¿TODAVÍA TIENES DUDAS?</h2>
+    <p class="faq-subheading">Resolvemos tus preguntas.</p>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Qué recibo al activar mi Máquina de Ingresos 24/7™?</summary>
+        <div class="faq-answer">
+          <p><strong>Acceso completo al Método CAV — Copia, Activa y Vende</strong>, organizado en 3 módulos prácticos para comenzar a construir tu fuente de ingresos extra.</p>
+          <p>✅ <strong>COPIA:</strong> Descubre cómo preparar tu Máquina de Ingresos con una estructura guiada, instrucciones sencillas y materiales listos para adaptar.</p>
+          <p>⚡ <strong>ACTIVA:</strong> Aprende paso a paso a poner tu máquina en funcionamiento y preparar todo para comenzar a promocionar por internet.</p>
+          <p>💰 <strong>VENDE:</strong> Descubre cómo aplicar el sistema, promocionar productos y aprovechar oportunidades de generar comisiones.</p>
+          <p>🎁 <strong>BONO EXCLUSIVO INCLUIDO:</strong> Panel de Ganancias 24/7™ para organizar tus metas y control de tus resultados.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿La Máquina de Ingresos 24/7™ realmente está siendo utilizada por otras personas?</summary>
+        <div class="faq-answer">
+          <p class="faq-highlight">¡SÍ! +9.525 PERSONAS YA ESTÁN UTILIZANDO LA MÁQUINA DE INGRESOS 24/7™</p>
+          <p>Y ya hay usuarios que están obteniendo resultados al poner en práctica el Método CAV.</p>
+          <p>Tú también puedes comenzar desde cero, seguir el sistema paso a paso y trabajar para construir tu propia fuente de ingresos extra.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Necesito experiencia para comenzar?</summary>
+        <div class="faq-answer">
+          <p><strong>¡Absolutamente NO!</strong> El Método CAV está diseñado para principiantes. No necesitas conocimientos técnicos ni experiencia en ventas. Recibirás instrucciones prácticas para avanzar a tu propio ritmo.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Necesito crear productos o mostrar mi rostro?</summary>
+        <div class="faq-answer">
+          <p><strong>¡NO!</strong> No necesitas desarrollar tus propios productos ni aparecer frente a una cámara. El método te enseña una forma de promocionar productos digitales sin exponerte en redes sociales.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿La Máquina de Ingresos trabaja automáticamente?</summary>
+        <div class="faq-answer">
+          <p>El Método CAV te enseña a preparar un sistema de promoción digital que puede mantener tu contenido disponible las 24 horas.</p>
+          <p><strong>No necesitas estar conectado todo el día</strong>, pero sí aplicar el método. Las ventas y las comisiones no están garantizadas.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Necesito invertir en herramientas adicionales?</summary>
+        <div class="faq-answer">
+          <p>Tu acceso incluye los <strong>3 módulos del Método CAV y el bono exclusivo</strong>.</p>
+          <p>Puedes comenzar aprendiendo con los recursos disponibles. Algunas herramientas externas pueden tener costos adicionales según cómo decidas implementar el sistema.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cuánto tiempo necesito dedicarle?</summary>
+        <div class="faq-answer">
+          <p><strong>¡Puedes avanzar a tu propio ritmo!</strong> Los módulos están organizados para que puedas aprender y aplicar cada etapa según tu disponibilidad, incluso si tienes otras responsabilidades.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cuándo recibo mi Máquina de Ingresos?</summary>
+        <div class="faq-answer">
+          <p><strong>¡Tu acceso es inmediato!</strong> Una vez confirmada tu compra, podrás ingresar al área de miembros, acceder a los 3 módulos del Método CAV y recibir tu bono exclusivo.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Qué pasa si compro y no es para mí?</summary>
+        <div class="faq-answer">
+          <p><strong>¡Tu compra cuenta con una garantía de 7 días!</strong> Puedes solicitar un reembolso durante ese plazo, conforme a las condiciones aplicables de la plataforma.</p>
+        </div>
+      </details>
+    </div>
+  </section>
 
   <p class="tagline">
     <img
