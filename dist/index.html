@@ -285,13 +285,22 @@
     text-decoration: none;
     text-align: center;
     box-shadow: 0 8px 22px rgba(22, 163, 74, 0.35);
-    margin: 0 0 24px;
+    margin: 0 0 6px;
     transition: filter 0.15s ease;
     animation: cta-pulse 1.1s ease-in-out infinite;
   }
   .cta:hover,
   .cta:focus-visible { filter: brightness(1.06); outline: none; }
   .cta:focus-visible { box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.35); }
+
+  .cta-note {
+    margin: 0 0 8px;
+    color: var(--fg-muted);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+  }
 
   @keyframes cta-pulse {
     0%, 100% {
@@ -500,7 +509,8 @@
     <div class="vsl-error" id="vslError" role="status" hidden></div>
   </div>
 
-  <a href="https://pay.hotmart.com/G107995934Y?checkoutMode=10" class="cta" id="ctaBtn">Quiero activar mi máquina →</a>
+  <a href="https://pay.hotmart.com/G107995934Y?checkoutMode=10" class="cta" id="ctaBtn">QUIERO MI ACCESO - US$ 9.90</a>
+  <p class="cta-note">🔓 Acceso de por vida · Pago único</p>
 
   <script>
   (function() {
