@@ -1,8 +1,0 @@
-{
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "landingpage-v3",
-  "compatibility_date": "2026-10-19",
-  "assets": {
-    "directory": "./dist"
-  }
-}
