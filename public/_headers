@@ -1,2 +1,5 @@
 /assets/10x-match-secret/*
   Cache-Control: public, max-age=31536000, immutable
+
+/assets/barritas/*
+  Cache-Control: public, max-age=31536000, immutable
